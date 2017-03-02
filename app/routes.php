@@ -13,4 +13,8 @@ Router::get('/quick', function () {
 
 Router::get('test', 'App\Controllers\TestController@index');
 
+Router::get(":all", function () {
+
+});
+
 Router::dispatch();
