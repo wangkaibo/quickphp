@@ -1,0 +1,19 @@
+{
+    "name": "wangkaibo/quickphp",
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "wangkaibo",
+            "email": "wkaiboo@gmail.com"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^1.22",
+        "noahbuscher/macaw": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
