@@ -1,4 +1,7 @@
+/node_modules
+.idea/*
+composer.lock
 /vendor
 /node_modules
-.env
-/.idea
+composer.phar
+.DS_Store
