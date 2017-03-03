@@ -26,7 +26,7 @@ if (!function_exists('app_path')) {
 
 if (! function_exists('config')) {
     /**
-     * 获取或临时设置配置项值
+     * 获取设置配置项值
      *
      * If an array is passed as the key, we will assume you want to set an array of values.
      *
@@ -36,15 +36,8 @@ if (! function_exists('config')) {
      */
     function config($key = null, $default = null)
     {
-        if (is_null($key)) {
-            return app('config');
-        }
-
-        if (is_array($key)) {
-            return app('config')->set($key);
-        }
-
-        return app('config')->get($key, $default);
+        $config = \Core\Config::getInstance();
+        return $config->get($key, $default);
     }
 }
 
@@ -53,9 +46,9 @@ if (! function_exists('app')) {
     function app($make = null)
     {
         if (is_null($make)) {
-            return \Core\Container::getInstance();
+            return \Core\App::getInstance();
         }
 
-        return \Core\Container::getInstance()->make($make);
+        return \Core\App::getInstance()->make($make);
     }
 }

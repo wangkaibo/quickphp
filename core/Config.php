@@ -8,11 +8,36 @@ namespace Core;
 
 class Config
 {
+    private static $instance = null;
     protected $items;
 
-    public function __construct(array $items)
+    private function __construct()
     {
-        $this->items = $items;
+        // 加载配置文件
+        $config_files = glob(config_path() . '*.php');
+
+        $config = [];
+
+        foreach ($config_files as $path) {
+            $base_name = pathinfo($path)['filename'];
+            $config[$base_name] = require $path;
+        }
+        $this->items = $config;
+    }
+
+    /**
+     * 私有化 __clone
+     */
+    private function __clone() {
+
+    }
+
+    public static function getInstance()
+    {
+        if (is_null(self::$instance)) {
+            self::$instance = new Config();
+        }
+        return self::$instance;
     }
 
     /**

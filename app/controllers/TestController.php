@@ -7,6 +7,8 @@
  */
 namespace App\Controllers;
 
+use App\Models\Test;
+
 class TestController extends BaseController
 {
 	public function __construct()
@@ -16,6 +18,7 @@ class TestController extends BaseController
 
 	public function index()
 	{
-		echo 'ok';
+		$res = Test::first();
+		echo json_encode($res);
 	}
 }

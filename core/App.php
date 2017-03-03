@@ -6,7 +6,7 @@
  */
 namespace Core;
 
-class Container
+class App
 {
     /**
      * 共享类的实例
@@ -31,7 +31,7 @@ class Container
     public static function getInstance()
     {
         if (is_null(self::$instance)) {
-            self::$instance = new Container();
+            self::$instance = new App();
         }
         return self::$instance;
     }
