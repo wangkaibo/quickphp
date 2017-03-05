@@ -24,7 +24,7 @@ if (!function_exists('app_path')) {
     }
 }
 
-if (! function_exists('config')) {
+if (!function_exists('config')) {
     /**
      * 获取设置配置项值
      *
@@ -41,7 +41,7 @@ if (! function_exists('config')) {
     }
 }
 
-if (! function_exists('app')) {
+if (!function_exists('app')) {
 
     function app($make = null)
     {
@@ -50,5 +50,43 @@ if (! function_exists('app')) {
         }
 
         return \Core\App::getInstance()->make($make);
+    }
+}
+
+if (!function_exists('storage_path')) {
+    function storage_path() {
+        return __DIR__ . '/../storage' . DIRECTORY_SEPARATOR;
+    }
+}
+
+if (!function_exists('view')) {
+    /**
+     * 返回一个给定的视图
+     * @param $name
+     * @param array $data
+     */
+    function view($name, $data = []) {
+
+        $path = [app_path() . 'views'];         // 视图文件目录，这是数组，可以有多个目录
+        $cachePath = storage_path() . 'cache/views';     // 编译文件缓存目录
+
+        $compiler = new \Xiaoler\Blade\Compilers\BladeCompiler($cachePath);
+
+        // 如过有需要，你可以添加自定义关键字
+//        $compiler->directive('datetime', function($timestamp) {
+//
+//        });
+
+        $engine = new \Xiaoler\Blade\Engines\CompilerEngine($compiler);
+        $finder = new \Xiaoler\Blade\FileViewFinder($path);
+
+        // 如果需要添加自定义的文件扩展，使用以下方法
+//        $finder->addExtension('tpl');
+
+        // 实例化 Factory
+        $factory = new \Xiaoler\Blade\Factory($engine, $finder);
+
+        // 渲染视图并输出
+        echo $factory->make($name, $data)->render();
     }
 }

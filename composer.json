@@ -11,7 +11,8 @@
         "monolog/monolog": "^1.22",
         "noahbuscher/macaw": "dev-master",
         "illuminate/database": "~5.1",
-        "predis/predis": "~1.1"
+        "predis/predis": "~1.1",
+        "xiaoler/blade": "^0.3.1"
     },
     "autoload": {
         "psr-4": {

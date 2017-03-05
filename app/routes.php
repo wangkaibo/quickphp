@@ -14,7 +14,8 @@ Router::get('/quick', function () {
 Router::get('test', 'App\Controllers\TestController@index');
 
 Router::get(":all", function () {
-	header('HTTP/1.0 404 Not Found');
+	$name = 'Pavel';
+	view('welcome', compact('name'));
 });
 
 Router::dispatch();
