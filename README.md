@@ -1,5 +1,15 @@
 ## Quick Start
 
+### 安装
+下载源码 
+
+`git clone https://github.com/wangkaibo/quickphp.git`
+
+安装依赖
+
+`composer install`
+
+
 ### 启动配置
 数据库配置文件 `config/database.php`
 
