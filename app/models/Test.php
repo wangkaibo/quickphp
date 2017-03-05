@@ -10,5 +10,5 @@ namespace App\Models;
 class Test extends BaseModel
 {
 	public $timestamps = false;
-	protected $table = 'test1';
+	protected $table = 'test';
 }

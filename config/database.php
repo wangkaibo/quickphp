@@ -5,12 +5,14 @@
  * Time: 下午9:52
  */
 return [
-    'driver'    => 'mysql',
-    'host'      => '127.0.0.1',
-    'database'  => 'test',
-    'username'  => 'root',
-    'password'  => '111111',
-    'charset'   => 'utf8',
-    'collation' => 'utf8_unicode_ci',
-    'prefix'    => '',
+    'default' => [
+        'driver'    => 'mysql',
+        'host'      => '127.0.0.1',
+        'database'  => 'database',
+        'username'  => 'user',
+        'password'  => '',
+        'charset'   => 'utf8',
+        'collation' => 'utf8_unicode_ci',
+        'prefix'    => '',
+    ]
 ];

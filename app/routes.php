@@ -8,13 +8,13 @@
 use \NoahBuscher\Macaw\Macaw as Router;
 
 Router::get('/quick', function () {
-	echo 'hi';
+	echo 'quick';
 });
 
 Router::get('test', 'App\Controllers\TestController@index');
 
 Router::get(":all", function () {
-
+	header('HTTP/1.0 404 Not Found');
 });
 
 Router::dispatch();
