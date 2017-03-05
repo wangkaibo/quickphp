@@ -87,6 +87,6 @@ if (!function_exists('view')) {
         $factory = new \Xiaoler\Blade\Factory($engine, $finder);
 
         // 渲染视图并输出
-        echo $factory->make($name, $data)->render();
+        return $factory->make($name, $data)->render();
     }
 }

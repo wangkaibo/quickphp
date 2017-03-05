@@ -18,7 +18,11 @@ class TestController extends BaseController
 
 	public function index()
 	{
-		$res = Test::first();
-		echo json_encode($res);
+
+	}
+
+	public function store()
+	{
+
 	}
 }

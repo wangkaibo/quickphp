@@ -7,15 +7,10 @@
  */
 use \NoahBuscher\Macaw\Macaw as Router;
 
-Router::get('/quick', function () {
-	echo 'quick';
-});
-
-Router::get('test', 'App\Controllers\TestController@index');
+// your routes here
 
 Router::get(":all", function () {
-	$name = 'Pavel';
-	view('welcome', compact('name'));
+	echo view('welcome');
 });
 
 Router::dispatch();
