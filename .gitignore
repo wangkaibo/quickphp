@@ -5,3 +5,4 @@ composer.lock
 /node_modules
 composer.phar
 .DS_Store
+/storage
