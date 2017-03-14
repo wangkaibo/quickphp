@@ -14,6 +14,16 @@ if (!function_exists('config_path')) {
     }
 }
 
+if (!function_exists('public_path')) {
+    /**
+     * public path
+     * @return string
+     */
+    function public_path() {
+        return __DIR__ . '/../public' . DIRECTORY_SEPARATOR;
+    }
+}
+
 if (!function_exists('app_path')) {
     /**
      * app path
@@ -64,10 +74,11 @@ if (!function_exists('view')) {
      * 返回一个给定的视图
      * @param $name
      * @param array $data
+     * @return string
      */
     function view($name, $data = []) {
 
-        $path = [app_path() . 'views'];         // 视图文件目录，这是数组，可以有多个目录
+        $path = config('view')['view_path']; // 视图文件目录，这是数组，可以有多个目录
         $cachePath = storage_path() . 'cache/views';     // 编译文件缓存目录
 
         $compiler = new \Xiaoler\Blade\Compilers\BladeCompiler($cachePath);
