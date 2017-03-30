@@ -9,8 +9,8 @@ use \NoahBuscher\Macaw\Macaw as Router;
 
 // your routes here
 
-Router::get(":all", function () {
-	echo view('welcome');
+Router::error(function() {
+	echo '404 Not Found';
 });
 
 Router::dispatch();
