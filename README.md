@@ -12,7 +12,7 @@
 ### 启动配置
 数据库配置文件 `config/database.php`
 
-```
+```php
 return [
     'default' => [
         'driver'    => 'mysql',
@@ -43,7 +43,7 @@ return [
 
 路由文件 `app/routes.php`
 
-```
+```php
 // GET 请求
 Router::get('/get', function () {
 	echo 'get';
@@ -61,7 +61,7 @@ Router::get(":all", function () {
 ```
 使用 PHP 内置 Server：
 
-```
+```shell
 php -S 127.0.0.1：8080 public/index.php
 ```
 访问：[http://127.0.0.1:8080](http://127.0.0.1:8080)
