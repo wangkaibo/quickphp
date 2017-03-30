@@ -1,9 +1,8 @@
 ## Quick Start
 
 ### 安装
-下载源码 
 
-`git clone https://github.com/wangkaibo/quickphp.git`
+ `composer create-project wangkaibo/quickphp your-project-name`
 
 安装依赖
 
