@@ -20,11 +20,5 @@
             "App\\": "app/",
             "Core\\": "core/"
         }
-    },
-    "repositories": {
-        "packagist": {
-            "type": "composer",
-            "url": "https://packagist.phpcomposer.com"
-        }
     }
 }
