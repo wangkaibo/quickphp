@@ -24,14 +24,23 @@ class App
     /**
      * 防止用户克隆实例
      */
-    private function __clone(){
+    private function __clone()
+    {
 
+    }
+    
+    /**
+     * 声明成私有方法，禁止重建对象
+     */
+    private function __wakeup()
+    {
+        
     }
 
     public static function getInstance()
     {
-        if (is_null(self::$instance)) {
-            self::$instance = new App();
+        if (!self::$instance instanceof self) {
+            self::$instance = new self();
         }
         return self::$instance;
     }
