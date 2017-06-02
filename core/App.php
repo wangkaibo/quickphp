@@ -24,7 +24,7 @@ class App
     /**
      * 防止用户克隆实例
      */
-    public function __clone(){
+    private function __clone(){
 
     }
 
